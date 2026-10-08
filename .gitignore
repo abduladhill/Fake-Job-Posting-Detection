@@ -1,0 +1,58 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables & secrets
+.env
+.env.local
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Large dataset files (keep repo lightweight, download from Kaggle/EMSCAD source)
+dataset/DataSet.csv
+dataset/DataSet.zip
+
+# Note on models/:
+# The serialized model artifacts (models/*.pkl) total < 500 KB, so they can safely
+# be committed to git if you want the Streamlit app to run out-of-the-box without retraining.
+# If you prefer users train from scratch using train_model.py, uncomment the line below:
+# models/
