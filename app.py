@@ -16,6 +16,162 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+st.markdown(
+    """
+    <style>
+    :root {
+        --ink: #17243b;
+        --muted: #63718a;
+        --accent: #287d8e;
+        --line: #e2e9f1;
+        --surface: #ffffff;
+    }
+
+    [data-testid="stAppViewContainer"] {
+        background:
+            radial-gradient(ellipse at 80% 0%, rgba(58, 148, 158, 0.09), transparent 34rem),
+            #f4f7fb;
+    }
+    [data-testid="stHeader"] { background: transparent; }
+    [data-testid="stMainBlockContainer"] {
+        max-width: 1180px;
+        padding-top: 2.2rem;
+        padding-bottom: 4rem;
+    }
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #14243d 0%, #1c3550 100%);
+    }
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h1,
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h2,
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h3,
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] li,
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] strong {
+        color: #edf4fb;
+    }
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] hr {
+        border-color: rgba(230, 240, 250, 0.18);
+    }
+    [data-testid="stMarkdownContainer"] h1,
+    [data-testid="stMarkdownContainer"] h2,
+    [data-testid="stMarkdownContainer"] h3 {
+        color: var(--ink);
+        letter-spacing: -0.025em;
+    }
+    [data-testid="stTextInput"] label,
+    [data-testid="stTextArea"] label {
+        color: var(--ink);
+        font-weight: 650;
+    }
+    [data-testid="stTextInput"] input,
+    [data-testid="stTextArea"] textarea {
+        background: var(--surface);
+        border-color: #d7e0eb;
+        border-radius: 10px;
+    }
+    [data-testid="stTextInput"] input:focus,
+    [data-testid="stTextArea"] textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 2px rgba(40, 125, 142, 0.14);
+    }
+    [data-testid="stVerticalBlockBorderWrapper"] {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 12px 32px rgba(28, 50, 77, 0.055);
+    }
+    [data-testid="stMetric"] {
+        height: 100%;
+        padding: 1rem 1.1rem;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        box-shadow: 0 8px 22px rgba(28, 50, 77, 0.045);
+    }
+    [data-testid="stMetricLabel"] { color: var(--muted); }
+    [data-testid="stMetricValue"] { color: var(--ink); }
+    [data-testid="stButton"] button {
+        min-height: 2.7rem;
+        border-radius: 10px;
+        font-weight: 650;
+        transition: transform 120ms ease, box-shadow 120ms ease;
+    }
+    [data-testid="stButton"] button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 16px rgba(28, 50, 77, 0.12);
+    }
+    [data-testid="stButton"] button[kind="primary"] {
+        border: 0;
+        background: linear-gradient(100deg, #287d8e, #326b8d);
+        color: #fff;
+    }
+    .hero {
+        margin-bottom: 1.8rem;
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        color: white;
+        background: linear-gradient(115deg, #172b46 0%, #24596c 72%, #287d8e 100%);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: 22px;
+        box-shadow: 0 18px 40px rgba(25, 57, 78, 0.17);
+    }
+    .hero-kicker {
+        margin: 0 0 0.5rem;
+        color: #a8dce0;
+        font-size: 0.76rem;
+        font-weight: 750;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+    }
+    .hero h1 {
+        margin: 0;
+        color: #fff !important;
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: -0.045em;
+        line-height: 1.1;
+    }
+    .hero-copy {
+        max-width: 680px;
+        margin: 0.85rem 0 0;
+        color: #e0edf2;
+        font-size: 1.02rem;
+        line-height: 1.65;
+    }
+    .section-intro {
+        margin: -0.5rem 0 1.1rem;
+        color: var(--muted);
+        line-height: 1.6;
+    }
+    .result-card {
+        margin: 0.5rem 0 1.2rem;
+        padding: 1.2rem 1.4rem;
+        border: 1px solid;
+        border-radius: 14px;
+    }
+    .result-card h3 { margin: 0 0 0.35rem; }
+    .result-card p { margin: 0; line-height: 1.6; }
+    .result-safe {
+        background: #eff9f5;
+        border-color: #b8e3d0;
+    }
+    .result-safe h3 { color: #17664b !important; }
+    .result-safe p { color: #315f51; }
+    .result-alert {
+        background: #fff5f1;
+        border-color: #f1c6b8;
+    }
+    .result-alert h3 { color: #a53d28 !important; }
+    .result-alert p { color: #75463b; }
+    @media (max-width: 640px) {
+        [data-testid="stMainBlockContainer"] {
+            padding: 1.2rem 1rem 2.5rem;
+        }
+        .hero { border-radius: 16px; }
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 # ============================================================
 # 1. TEXT CLEANING FUNCTION (EXACT SAME AS TRAINING)
@@ -159,10 +315,18 @@ with st.sidebar:
 # 4. MAIN USER INTERFACE
 # ============================================================
 
-st.title("Fake Job Posting Detector")
 st.markdown(
-    "Analyze job postings in real time to assess whether a posting matches linguistic "
-    "patterns of legitimate or fraudulent recruitments."
+    """
+    <section class="hero">
+        <p class="hero-kicker">AI-assisted screening</p>
+        <h1>Fake Job Posting Detector</h1>
+        <p class="hero-copy">
+            Review a job listing for language patterns associated with fraudulent
+            recruitment. Add the details below to get a model-assisted assessment.
+        </p>
+    </section>
+    """,
+    unsafe_allow_html=True
 )
 
 if model is None or tfidf is None or threshold is None:
@@ -172,9 +336,14 @@ if model is None or tfidf is None or threshold is None:
     )
     st.stop()
 
-st.subheader("📋 Enter Job Details")
+st.markdown("### 📋 Job posting details")
+st.markdown(
+    '<p class="section-intro">Share as much of the listing as you have. '
+    'More context can help the model make a more useful comparison.</p>',
+    unsafe_allow_html=True
+)
 
-with st.container():
+with st.container(border=True):
     title_input = st.text_input(
         "Job Title",
         value=st.session_state.job_title,
@@ -253,20 +422,30 @@ if analyze_clicked:
                 is_fraudulent = decision_score >= threshold
 
             st.markdown("---")
-            st.subheader("📊 Analysis Results")
+            st.markdown("### 📊 Analysis results")
 
             # Result announcement
             if is_fraudulent:
-                st.error("### Prediction: Potentially Fraudulent Job")
                 st.markdown(
-                    "The textual features of this posting match patterns frequently observed "
-                    "in fraudulent listings within the training data."
+                    """
+                    <div class="result-card result-alert">
+                        <h3>⚠️ Potentially fraudulent</h3>
+                        <p>The text matches patterns frequently observed in fraudulent
+                        listings in the training data. Review the posting carefully.</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
                 )
             else:
-                st.success("### Prediction: Genuine Job")
                 st.markdown(
-                    "The textual features of this posting align with standard patterns observed "
-                    "in legitimate job listings within the training data."
+                    """
+                    <div class="result-card result-safe">
+                        <h3>✓ No strong fraud signals detected</h3>
+                        <p>The text aligns with patterns observed in legitimate listings
+                        in the training data. This is not a guarantee of legitimacy.</p>
+                    </div>
+                    """,
+                    unsafe_allow_html=True
                 )
 
             # Metric cards
